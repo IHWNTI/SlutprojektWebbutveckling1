@@ -1,7 +1,7 @@
-import SearchBar from "../components/SearchBar";
-import MapControls from "../components/MapControls";
-import MapView from "../components/MapView";
-import InfoCards from "../components/InfoCards";
+import SearchBar from "../components/SearchBar.tsx";
+import MapControls from "../components/MapControls.tsx";
+import MapView from "../components/MapView.tsx";
+import InfoCards from "../components/InfoCards.tsx";
 
 export default function MapPage() {
   return (
