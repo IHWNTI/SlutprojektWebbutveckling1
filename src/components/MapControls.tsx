@@ -1,17 +1,45 @@
+import { useMap } from "react-leaflet";
+
 export default function MapControls() {
+  const map = useMap();
+
+  const stop = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="flex gap-2 p-2 bg-white shadow justify-center">
-      <button className="px-3 py-1 bg-blue-500 text-white rounded">
-        Lager
+    <div
+      className="customControls"
+      onMouseDown={stop}
+      onClick={stop}
+      onDoubleClick={stop}
+      onTouchStart={stop}
+    >
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          map.zoomIn();
+        }}
+      >
+        +
       </button>
-      <button className="px-3 py-1 bg-green-500 text-white rounded">
-        Zoom +
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          map.zoomOut();
+        }}
+      >
+        -
       </button>
-      <button className="px-3 py-1 bg-green-500 text-white rounded">
-        Zoom -
-      </button>
-      <button className="px-3 py-1 bg-gray-500 text-white rounded">
-        Info
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          map.setView([59.8586, 17.6389], 14);
+        }}
+      >
+        Center
       </button>
     </div>
   );

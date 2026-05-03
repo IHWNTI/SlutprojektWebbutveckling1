@@ -1,26 +1,19 @@
-import SearchBar from "../components/SearchBar.tsx";
-import MapControls from "../components/MapControls.tsx";
-import MapView from "../components/MapView.tsx";
-import InfoCards from "../components/InfoCards.tsx";
+import BusMarkers from "../components/BusMarkers";
+import MapView from "../components/MapView";
+import SearchPanel from "../components/SearchPanel";
+import TopSearch from "../components/TopSearchBar";
+import "./MapPage.css";
 
 export default function MapPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
-      
-      {/* Search bar */}
-      <SearchBar />
-
-      {/* Map controls */}
-      <MapControls />
-
-      {/* Map */}
-      <div className="h-[500px] w-full">
-        <MapView />
-      </div>
-
-      {/* Info cards */}
-      <InfoCards />
-
+    <div className="container">
+      <TopSearch />
+      <MapView>
+        <BusMarkers />
+      </MapView>
+    
+      <SearchPanel />
     </div>
+
   );
 }
