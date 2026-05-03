@@ -18,6 +18,14 @@ export default function MapControls() {
       <button
         onClick={(e) => {
           e.stopPropagation();
+          // TODO: Open settings modal
+        }}
+      > Settings
+      </button>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
           map.zoomIn();
         }}
       >

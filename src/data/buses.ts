@@ -4,13 +4,13 @@ export const buses: Bus[] = [
   {
     id: 1,
     line: "16",
-    position: [57.7089, 11.9746],
+    position: [59.8517, 17.6561],
     destination: "Centralstationen"
   },
   {
     id: 2,
     line: "25",
-    position: [57.7065, 11.9670],
-    destination: "Linnéplatsen"
+    position: [59.8495, 17.6601],
+    destination: "Centralstationen"
   }
 ];

@@ -6,7 +6,7 @@
 
 .topSearch {
   position: absolute;
-  top: 20px;
+  top: 7vh;
   left: 76%;
   transform: translateX(-50%);
   z-index: 1000;
