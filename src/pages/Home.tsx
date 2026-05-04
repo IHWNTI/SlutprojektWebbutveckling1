@@ -5,8 +5,8 @@ export default function Home() {
         <div>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/map">Map</a></li>
+                    <li><button><a href="/">Home</a></button></li>
+                    <li><button><a href="/map">Map</a></button></li>
                 </ul>
             </nav>
             <h1>Welcome to the Home Page</h1>

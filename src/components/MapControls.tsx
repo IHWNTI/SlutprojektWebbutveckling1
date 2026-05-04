@@ -18,7 +18,7 @@ export default function MapControls() {
       <button
         onClick={(e) => {
           e.stopPropagation();
-          // TODO: Open settings modal
+          // TODO: Open settings popup.
         }}
       > Settings
       </button>
