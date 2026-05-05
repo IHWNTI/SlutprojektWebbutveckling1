@@ -1,3 +1,4 @@
+
 .container {
   position: relative;
   height: 100vh;
@@ -104,4 +105,11 @@
 .customControls button {
   padding: 10px;
   cursor: pointer;
+}
+
+.settingsPanel ul {
+  display: table-row;
+  gap: 20px;
+  list-style: none;
+
 }
