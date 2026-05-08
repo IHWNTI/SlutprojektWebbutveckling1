@@ -1,6 +1,7 @@
 import { useMap } from "react-leaflet";
+import type { MapControlsProps } from "../type/MapControlsProps";
 
-export default function MapControls() {
+export default function MapControls({ setSidebarOpen }: MapControlsProps) {
   const map = useMap();
 
   const stop = (e: React.SyntheticEvent) => {
@@ -18,7 +19,7 @@ export default function MapControls() {
       <button
         onClick={(e) => {
           e.stopPropagation();
-          // TODO: Open settings popup.
+          setSidebarOpen(prev => !prev);
         }}
       > Settings
       </button>

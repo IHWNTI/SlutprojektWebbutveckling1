@@ -1,6 +1,8 @@
 import { useState } from "react";
+import type { MenuSidebarProps } from "../type/MapControlsProps";
 
-export default function MenuSidebar() {
+
+export default function MenuSidebar({ sidebarOpen }: MenuSidebarProps) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const toggleMenu = (menu: string) => {
@@ -8,13 +10,12 @@ export default function MenuSidebar() {
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
 
       <div className="sidebar-item active">
-        <span>Flight tracker map <span className="badge-live">live</span></span>
+        <a href="/map"><span>Map <span className="badge-live">live</span></span></a>
       </div>
 
-      {/* Aviation */}
         <div
             className={`sidebar-item ${openMenu === "aviation" ? "open" : ""}`}
             onClick={() => toggleMenu("aviation")}
@@ -31,8 +32,9 @@ export default function MenuSidebar() {
         </div>
       )}
 
-      {/* Coverage */}
-      <div className="sidebar-item" onClick={() => toggleMenu("coverage")}>
+
+      <div className={`sidebar-item ${openMenu === "coverage" ? "open" : ""}`}
+        onClick={() => toggleMenu("coverage")}>
         <span>Add coverage</span>
         <span className="chevron">⌄</span>
       </div>
@@ -43,8 +45,9 @@ export default function MenuSidebar() {
         </div>
       )}
 
-      {/* API */}
-      <div className="sidebar-item" onClick={() => toggleMenu("api")}>
+
+      <div className={`sidebar-item ${openMenu === "api" ? "open" : ""}`}
+        onClick={() => toggleMenu("api")}>
         <span>Commercial services & API</span>
         <span className="chevron">⌄</span>
       </div>
@@ -56,18 +59,19 @@ export default function MenuSidebar() {
         </div>
       )}
 
-      {/* About */}
-      <div className="sidebar-item" onClick={() => toggleMenu("about")}>
-        <span>About</span>
+      <div className={`sidebar-item ${openMenu === "pages" ? "open" : ""}`}
+        onClick={() => toggleMenu("pages")}>
+        <span>Pages</span>
         <span className="chevron">⌄</span>
       </div>
-      {openMenu === "about" && (
+      {openMenu === "pages" && (
         <div className="submenu">
-          <div className="submenu-item">Our team</div>
-          <div className="submenu-item">Careers</div>
+          <a href="/"><div className="submenu-item">Home</div></a>
+          <a href="/map"><div className="submenu-item">Map</div></a>
+          <a href="/dashboard"><div className="submenu-item">Dashboard</div></a>
         </div>
       )}
-
+       
     </div>
   );
 }

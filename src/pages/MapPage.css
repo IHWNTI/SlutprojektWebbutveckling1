@@ -1,34 +1,46 @@
-
-#root {
-  padding: 0%;
-  margin: 0%;
-  background-color:black;
-  height: 100%;
+html, body, #root {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  /* box-sizing: border-box; */
-  display: flex;
-  justify-content: center;
+  min-width: 100%;
+  height: 100%;
   min-height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
-.container {
-  height: 100%;
+#root {
+  background-color: black;
   width: 100%;
-  margin: 0px !important;
-  padding: 0px;
+  min-height: 100vh;
+  display: block;
+}
+
+.map-page-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
   max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .main-container {
-  display: flex;
-  margin-top: 15px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 .topSearch {
-  top: 7vh;
-  right: 25vw;
+  top: 20px;
+  left: 45%;
   z-index: 1000;
+  max-height: fit-content;
+  position: absolute;
 } 
 
 .topSearch input {
@@ -36,60 +48,15 @@
   width: 300px;
   border-radius: 20px;
   border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .map {
-  height: 90vh;
-  width: 100%;
-}
-
-.tabs {
-  display: flex;
-}
-
-.tabs button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  background: #ddd;
-}
-
-.tabs .active {
-  background: #f5c400;
-}
-
-.inputs input {
-  width: 100%;
-  margin: 5px 0;
-  padding: 8px;
-}
-
-/* Time buttons */
-.time {
-  display: flex;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.time button {
-  flex: 1;
   position: absolute;
-}
-
-
-.datetime {
-  display: flex;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.searchBtn {
+  inset: 0;
   width: 100%;
-  margin-top: 10px;
-  padding: 12px;
-  background: #f5c400;
-  border: none;
-  font-weight: bold;
+  height: 100%;
+  max-width: 100%;
 }
 
 .customControls {
@@ -97,23 +64,47 @@
   top: 20px;
   right: 20px;
   z-index: 1000;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   pointer-events: auto;
 }
 
 .customControls button {
   padding: 10px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: rgba(143, 143, 143, 0.696);
 }
 
 .sidebar {
   background: #2d2d2d;
   width: 260px;
   overflow: hidden;
+
+  position: absolute;
+  top: 220px;
+  right: 16px;
+  max-height: calc(100vh - 180px);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+
+  z-index: 999;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .sidebar-item {
@@ -123,6 +114,16 @@
   color: #e0e0e0;
   cursor: pointer;
   font-size: 15px;
+}
+
+ a:link {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+ a:visited {
+  text-decoration: none;
+  color: #1a1a1a;
 }
 
 .sidebar-item:hover { background: rgba(255,255,255,0.07); }
