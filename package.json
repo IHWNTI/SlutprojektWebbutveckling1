@@ -1,7 +1,6 @@
 {
   "name": "react-app",
-  "homepage": "https://IHWNTI.github.io/SlutprojektWebbutveckling1/",
-  "private": true,
+  "homepage": "https://ihwnti.github.io/SlutprojektWebbutveckling1/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
