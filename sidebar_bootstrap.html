@@ -1,0 +1,77 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<style>
+  .bs-sidebar { background-color: #2d2d2d; width: 260px; border-radius: 8px; overflow: hidden; }
+  .bs-sidebar .nav-link { color: #e0e0e0; font-size: 15px; padding: 13px 20px; border-bottom: 0.5px solid rgba(255,255,255,0.06); border-radius: 0; display: flex; align-items: center; justify-content: space-between; }
+  .bs-sidebar .nav-link:hover { background: rgba(255,255,255,0.07); color: #fff; }
+  .bs-sidebar .nav-link.active { color: #f5a623; font-weight: 500; border-left: 3px solid #f5a623; padding-left: 17px; }
+  .bs-sidebar .nav-link[data-bs-toggle="collapse"] .ti { transition: transform 0.2s; }
+  .bs-sidebar .nav-link[data-bs-toggle="collapse"]:not(.collapsed) .ti { transform: rotate(180deg); }
+  .bs-sidebar .collapse-menu { background: #252525; }
+  .bs-sidebar .collapse-menu .nav-link { font-size: 14px; color: #bbb; padding: 9px 20px 9px 36px; border-bottom: 0.5px solid rgba(255,255,255,0.04); }
+  .bs-sidebar .collapse-menu .nav-link:hover { color: #e0e0e0; }
+  .bs-sidebar hr { border-color: rgba(255,255,255,0.12); margin: 6px 0; }
+  .badge-live { font-size: 10px; font-weight: 700; background: #f5a623; color: #1a1a1a; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px; }
+</style>
+
+<div class="d-flex justify-content-center py-4">
+  <nav class="bs-sidebar">
+
+    <a href="#" class="nav-link active">
+      Flight tracker map <span class="badge-live ms-1">LIVE</span>
+    </a>
+
+    <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#aviation" aria-expanded="false">
+      Aviation data <i class="ti ti-chevron-down"></i>
+    </a>
+    <div class="collapse collapse-menu" id="aviation">
+      <a href="#" class="nav-link">Airlines</a>
+      <a href="#" class="nav-link">Airports</a>
+      <a href="#" class="nav-link">Aircraft</a>
+    </div>
+
+    <a href="#" class="nav-link">
+      Email alerts <i class="ti ti-lock ms-1" style="color:#f5a623"></i>
+    </a>
+
+    <a href="#" class="nav-link">
+      Subscription plans <i class="ti ti-trophy ms-1" style="color:#2ecc71"></i>
+    </a>
+
+    <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#coverage" aria-expanded="false">
+      Add coverage <i class="ti ti-chevron-down"></i>
+    </a>
+    <div class="collapse collapse-menu" id="coverage">
+      <a href="#" class="nav-link">By region</a>
+      <a href="#" class="nav-link">By airport</a>
+    </div>
+
+    <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#api" aria-expanded="false">
+      Commercial services & API <i class="ti ti-chevron-down"></i>
+    </a>
+    <div class="collapse collapse-menu" id="api">
+      <a href="#" class="nav-link">API documentation</a>
+      <a href="#" class="nav-link">Pricing</a>
+      <a href="#" class="nav-link">Contact sales</a>
+    </div>
+
+    <a href="#" class="nav-link">Press & media center</a>
+
+    <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#about" aria-expanded="false">
+      About <i class="ti ti-chevron-down"></i>
+    </a>
+    <div class="collapse collapse-menu" id="about">
+      <a href="#" class="nav-link">Our team</a>
+      <a href="#" class="nav-link">Careers</a>
+    </div>
+
+    <hr class="mx-3">
+
+    <a href="#" class="nav-link">MyFR24 – flight logbook</a>
+    <a href="#" class="nav-link">JetPhotos – aviation photos</a>
+    <a href="#" class="nav-link border-0">Forum</a>
+
+  </nav>
+</div>
