@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 export default function Home() {
@@ -5,8 +6,8 @@ export default function Home() {
         <div>
             <nav>
                 <ul>
-                    <li><button><a href="/">Home</a></button></li>
-                    <li><button><a href="/map">Map</a></button></li>
+                    <li><button><Link to="/">Home</Link></button></li>
+                    <li><button><Link to="/map">Map</Link></button></li>
                 </ul>
             </nav>
             <h1>Welcome to the Home Page</h1>

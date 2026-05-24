@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import type { MenuSidebarProps } from "../type/MapControlsProps";
 
 
@@ -13,7 +14,7 @@ export default function MenuSidebar({ sidebarOpen }: MenuSidebarProps) {
     <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
 
       <div className="sidebar-item active">
-        <a href="/map"><span>Map <span className="badge-live">live</span></span></a>
+        <Link to="/map"><span>Map <span className="badge-live">live</span></span></Link>
       </div>
 
         <div
@@ -66,9 +67,9 @@ export default function MenuSidebar({ sidebarOpen }: MenuSidebarProps) {
       </div>
       {openMenu === "pages" && (
         <div className="submenu">
-          <a href="/"><div className="submenu-item">Home</div></a>
-          <a href="/map"><div className="submenu-item">Map</div></a>
-          <a href="/dashboard"><div className="submenu-item">Dashboard</div></a>
+          <Link to="/"><div className="submenu-item">Home</div></Link>
+          <Link to="/map"><div className="submenu-item">Map</div></Link>
+          <Link to="/dashboard"><div className="submenu-item">Dashboard</div></Link>
         </div>
       )}
        
